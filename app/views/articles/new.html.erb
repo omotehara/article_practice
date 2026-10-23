@@ -1,0 +1,24 @@
+
+<h1>新規投稿</h1>
+
+<%= form_with model: @article do |form| %>
+  <div>
+    <%= form.label :title, "タイトル" %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :content, "投稿内容" %><br>
+    <%= form.text_area :content %>
+  </div>
+
+  <br>
+
+  <%= form.submit "投稿する" %>
+<% end %>
+
+<br>
+
+<%= link_to "一覧に戻る", articles_path %>
