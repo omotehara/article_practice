@@ -1,0 +1,17 @@
+<h1>投稿詳細</h1>
+
+<!-- ラベル（タイトル：、投稿内容：）をしっかり追加します -->
+<div class="detail-group">
+  <p><strong>タイトル：</strong> <%= @article.title %></p>
+  <p><strong>投稿内容：</strong> <%= @article.content %></p>
+</div>
+
+<!-- アクションリンクとボタンを横並びにするためのクラスを設定 -->
+<div class="action-box">
+  <%= link_to '投稿編集へ遷移', edit_article_path(@article), class: "link-item" %>
+  <span class="divider">|</span>
+  <%= link_to '一覧画面へ戻る', articles_path, class: "link-item" %>
+  <span class="divider">|</span>
+  <!-- 削除ボタン（button_to） -->
+  <%= button_to '削除ボタン', article_path(@article), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn-delete-inline" %>
+</div>
